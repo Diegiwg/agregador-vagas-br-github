@@ -1,0 +1,21 @@
+/* @import url("./reset.css"); */
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#app {
+    height: 100%;
+}
+
+#job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.job-list-item {
+    background-color: rgb(250, 237, 237);
+}
