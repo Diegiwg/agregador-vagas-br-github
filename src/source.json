@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Vagas Frontend (BR)",
+        "desc": "",
+        "path": "frontendbr/vagas"
+    },
+    {
+        "title": "Vagas Backend (BR)",
+        "desc": "",
+        "path": "backend-br/vagas"
+    }
+]
