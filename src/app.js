@@ -43,25 +43,6 @@ async function service_loadJobsFromSource(source_path, pagination) {
     return data;
 }
 
-function generator_jobInfoNode(data) {
-    if (!data) return helper_navigateTo("");
-    const node = document.createElement("div");
-
-    const back = document.createElement("button");
-    back.textContent = "Voltar";
-    back.onclick = () => {
-        globalData = null;
-        helper_navigateTo("");
-    };
-
-    const job_desc = document.createElement("p");
-    job_desc.innerHTML = helper_mdToHtml(data.body);
-
-    node.appendChild(back);
-    node.appendChild(job_desc);
-    return node;
-}
-
 function generator_jobNode(data) {
     const node = document.createElement("div");
     node.className = "job-list-item";
@@ -87,6 +68,25 @@ function generator_jobNode(data) {
     return node;
 }
 
+function generator_jobInfoNode(data) {
+    if (!data) return helper_navigateTo("");
+    const node = document.createElement("div");
+
+    const back = document.createElement("button");
+    back.textContent = "Voltar";
+    back.onclick = () => {
+        globalData = null;
+        helper_navigateTo("");
+    };
+
+    const job_desc = document.createElement("p");
+    job_desc.innerHTML = helper_mdToHtml(data.body);
+
+    node.appendChild(back);
+    node.appendChild(job_desc);
+    return node;
+}
+
 async function generator_homePage(data) {
     const node = document.createElement("div");
     node.id = "job-list";
@@ -106,12 +106,6 @@ function generator_jobInfoPage(data) {
     app.replaceChildren(...[node]);
 }
 
-function generator_fakePage(data) {
-    const node = document.createElement("div");
-    node.innerHTML = helper_mdToHtml(data);
-    app.replaceChildren(...[node]);
-}
-
 const sources = await service_loadJobSources();
 
 let currentPage = function () {};
@@ -123,18 +117,13 @@ setInterval(() => {
     if (currentPage === nextPage && currentPath === path) return;
 
     switch (path) {
-        case "":
-            globalData = sources;
-            nextPage = generator_homePage;
-            break;
-
         case "job-info":
             nextPage = generator_jobInfoPage;
             break;
 
         default:
-            globalData = "404";
-            nextPage = generator_fakePage;
+            globalData = sources;
+            nextPage = generator_homePage;
             break;
     }
 
