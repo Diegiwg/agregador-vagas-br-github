@@ -10,6 +10,7 @@ async function helper_getRequest(url) {
 
 function helper_navigateTo(uri) {
     window.location.href = `#${uri}`;
+    window.scroll(0, 0);
 }
 
 function helper_mdToHtml(markdown) {
