@@ -1,6 +1,6 @@
-# Agregador de Vagas Brasil do GitHub
+# Agregador de Vagas (Brasil) no GitHub
 
-O Agregador de Vagas Brasil do GitHub é um aplicativo web que permite a pesquisa de vagas de emprego divulgadas no GitHub para todo o Brasil.
+O Agregador de Vagas (Brasil) no GitHub é um aplicativo web que permite a pesquisa de vagas de emprego divulgadas em alguns repositórios no GitHub.
 
 ## Como usar
 
@@ -25,9 +25,18 @@ Lembre-se de que o aplicativo só é capaz de listar vagas que estejam divulgada
 
 Se você deseja contribuir para este projeto, sinta-se à vontade para criar um pull request. Todas as contribuições são bem-vindas!
 
+## Fontes de vagas
+
+Atualmente, as fontes de vagas incluídas no aplicativo são as seguintes:
+
+- Vagas Frontend (BR): https://github.com/frontendbr/vagas
+- Vagas Backend (BR): https://github.com/backend-br/vagas
+
+Se você deseja incluir novas fontes de vagas ou sugestões de melhorias, por favor, sinta-se à vontade para criar um pull request.
+
 ## Quem criou
 
-Este projeto foi criado por Diego Gonçalves.
+Este projeto foi criado por Diego Queiroz.
 
 ## Licença
 
